@@ -15,18 +15,18 @@ function Heap() {
 }
 
 function swap(i, j) {
-    div_update(divs[i], div_sizes[i], "rgb(172, 78, 158)");//Color update
-    div_update(divs[j], div_sizes[j], "rgb(172, 78, 158)");//Color update
+    div_update(divs[i], div_sizes[i], "red");//Color update
+    div_update(divs[j], div_sizes[j], "red");//Color update
 
     var temp = div_sizes[i];
     div_sizes[i] = div_sizes[j];
     div_sizes[j] = temp;
 
-    div_update(divs[i], div_sizes[i], "rgb(172, 78, 158)");//Height update
-    div_update(divs[j], div_sizes[j], "rgb(172, 78, 158)");//Height update
+    div_update(divs[i], div_sizes[i], "red");//Height update
+    div_update(divs[j], div_sizes[j], "red");//Height update
 
-    div_update(divs[i], div_sizes[i], "rgb(44, 53, 181)");//Color update
-    div_update(divs[j], div_sizes[j], "rgb(44, 53, 181)");//Color update
+    div_update(divs[i], div_sizes[i], "blue");//Color update
+    div_update(divs[j], div_sizes[j], "blue");//Color update
 }
 
 function max_heapify(n, i) {
@@ -41,17 +41,17 @@ function max_heapify(n, i) {
 
         largest = l;
 
-        div_update(divs[largest], div_sizes[largest], "rgb(172, 78, 158)");//Color update
+        div_update(divs[largest], div_sizes[largest], "red");//Color update
     }
 
     if (r < n && div_sizes[r] > div_sizes[largest]) {
         if (largest != i) {
-            div_update(divs[largest], div_sizes[largest], "rgb(44, 53, 181)");//Color update
+            div_update(divs[largest], div_sizes[largest], "blue");//Color update
         }
 
         largest = r;
 
-        div_update(divs[largest], div_sizes[largest], "rgb(172, 78, 158)");//Color update
+        div_update(divs[largest], div_sizes[largest], "red");//Color update
     }
 
     if (largest != i) {
@@ -68,13 +68,13 @@ function heap_sort() {
 
     for (var i = array_size - 1; i > 0; i--) {
         swap(0, i);
-        div_update(divs[i], div_sizes[i], "rgb(71, 71, 169)");//Color update
-        div_update(divs[i], div_sizes[i], "rgb(190, 213, 75");//Color update
+        div_update(divs[i], div_sizes[i], "green");//Color update
+        div_update(divs[i], div_sizes[i], "yellow");//Color update
 
         max_heapify(i, 0);
 
-        div_update(divs[i], div_sizes[i], "rgb(44, 53, 181)");//Color update
-        div_update(divs[i], div_sizes[i], "rgb(71, 71, 169)");//Color update
+        div_update(divs[i], div_sizes[i], "blue");//Color update
+        div_update(divs[i], div_sizes[i], "green");//Color update
     }
-    div_update(divs[i], div_sizes[i], "rgb(71, 71, 169)");//Color update
+    div_update(divs[i], div_sizes[i], "green");//Color update
 }
